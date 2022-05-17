@@ -1,7 +1,8 @@
-let inputElement =document.querySelector('todo-myinput');
-let formElement  = document.querySelector('form');
-let mylist      =     document.querySelector('ul');
-let clearitem = document.querySelector('end')
+
+let formElement  = document.querySelector('#form');
+let inputElement = document.querySelector('#todo-myinput');
+let mylist  =  document.querySelector('ul');
+let clearitem = document.querySelector('#end')
 
 let tasklist = [
  'buy groceries',
@@ -11,50 +12,64 @@ let tasklist = [
 
 
 
-function populatelist(){
-        mylist.innerHTML = '',
-        tasklist.forEach(function(item){
+function populatelist(todo) {
+
+     //declare a variable for li
         let newitem = document.createElement('li'); 
+        
+        //create span to add todo itself
+          let task = document.createElement('span');
+          task.innerHTML = todo;
+          newitem.appendChild(task)
 
-        // Add check button
+
+
+        // create and Add check button
          let checkElement = document.createElement('i');
-         checkElement.classList.add('check','fa fa-check-square');
-         checkElement.style.color = 'green'
-         checkElement.style.fontSize = '24px'
-          newitem.apprendchild(checkElement);
+         checkElement.classList.add('check','fa-regular','fa-circle-check');
+         checkElement.style.color = 'rgb(90, 206, 171)'
+          checkElement.style.fontSize = '16px'
+          newitem.appendChild(checkElement);
 
-        // Add Edit button
+        //  create and Add Edit button
            let EditElement = document.createElement('i');
-           EditElement.classList.add('Edit', 'far" fa-edit');
+           EditElement.classList.add('Edit', 'far', 'fa-edit');
            EditElement.style.color = ' rgb(89, 192, 240)' 
-           EditElement.style.fontsize = '24px'
-            newitem.apprendchild(EditElement);
+           EditElement.style.fontsize = '25px'
+            newitem.appendChild(EditElement);
 
 
-        // Add delete button
-           let deleteElement = document.   createElement('i');
-           deleteElement.classList.add('delete','far" fa-times-circle' );
+        // create and Add delete button
+           let deleteElement = document.createElement('i');
+           deleteElement.classList.add('delete','far', 'fa-times-circle' );
            deleteElement.style.color= 'red'
-           deleteElement.fontSize = '24px'      
-           newitem.apprendchild(deleteElement);
+           deleteElement.fontSize = '25px'      
+           newitem.appendChild(deleteElement);
 
        //add li to ul
-       mylist.apprendchild(newitem);
-})
- 
+       mylist.appendChild(newitem);
 }
-populatelist();
  
 
-function addtask(){
-if (formElement.value){
- tasklist.push(inputElement.value);
- populatelist();
-}          
+ 
+
+     function addtask(todo)   {
+      if (todo)  {
+      populatelist(todo);
+    }
+
 }
 
-formElement.addEventListener("summit",function(e){e.preventDefault();
-  addtask();
+    formElement.addEventListener("submit", function (e)  { 
+     e.preventDefault();
+    let todo = formElement.add.value.trim()
+      addtask(todo);
+    formElement.reset();
 
-
+    
 } )
+
+
+
+
+
