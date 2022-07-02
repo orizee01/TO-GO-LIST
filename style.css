@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,400&family=Ubuntu:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:ital,wght@0,300;0,400;1,500&family=Ubuntu:ital,wght@1,300&display=swap');
+
+
 
 *{
  margin: 0;
@@ -6,6 +8,7 @@
  outline: 0;
 box-sizing: border-box;
 }
+
 body{
  background-color: white;
   width: 100%;
@@ -15,16 +18,14 @@ body{
 .container{
  position: absolute;
  left: 25%;
- top: 10%;
- 
+ top: 10%; 
  transform: translate(-50%, -50);
  background-color:#f4f4f5 ;
  box-shadow: 0 2px 8px rgba(0, 0, 0,0.1);
- width: 60%;
+ width: 50%;
  height:80vh;
  text-align: center;
- font-family: 'Raleway',
-  sans-serif;;
+ font-family: 'Roboto','ubuntu', 'Raleway';
  
 }
 
@@ -35,13 +36,12 @@ body{
 }
 
 
-h3{
+h1{
  margin-bottom: 12px;
 }
 
  #form{
  margin:0px;
- 
  border: 1px solid rgb(90, 206, 171);
  
 
@@ -49,23 +49,15 @@ h3{
 
 #todo-myinput{
  padding: 10px 4px;
- width: 93.5%;
+ width: 92.9%;
 height: 100%;
  border: none;
 outline: none;
 border-right: 1px solid rgb(90, 206, 171);
 
-
  
 }
-
-
-
- 
-
-
-
-#mylist{
+#post{
  padding: 15px;
  
 }
@@ -96,32 +88,24 @@ cursor: pointer;
 
 
     
-
-      
-
-    
-
-
-ul{
-  list-style: none;
+#post{
+  justify-items:center;
+  text-align: left;
   margin:33px auto;
+  margin-left: 30px;
 
 }
 
-li{
-  display:grid;
-  grid-template-columns: 5fr 1fr;
+span,.option{
+  display:block;
   justify-content: center;
-  align-items: center;
-  text-align: justify;
-  margin: 20px auto;
+  
+  text-align:right;
+  
   width: 100%;
 }
 
-li {
-  text-align: left
 
-}
 
 
 input[type ='submit']{
@@ -135,43 +119,16 @@ input[type ='submit']{
   
 }
 
-.task{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
+
+
  
-.task  input{
-outline: none;
-padding: 15px;
-border: none;
-}
-
-.task input:disabled{
-   background-color: transparent;
-   color: black;
-
-}
-
-.icons{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content:space-between ;
-  
-}
-  .icons input{
-   cursor: pointer;
-       
-  }
-
-  .icons button{
-    background: none;
-    outline: none;
-    font-size: 1em;
-    cursor: pointer;
-    border:none;
     
-  }
+  
 
 
+.line_through {
+  text-decoration: line-through;
+  opacity: 0.7;
+  transition: .3s;
+}

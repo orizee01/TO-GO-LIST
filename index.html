@@ -13,33 +13,25 @@
 <body>
 <div class="container">
 <div class="header">
-  <h3>To Do List</h3>
+  <h1>To Do List</h1>
 
    <form id="form">
  <input type="text" id="todo-myinput" name="add" class="form-field"  placeholder="Name...">
  <input type ="submit"  value = "Add item">
-</form>
-<ul>
- <li class="content">
-<form class="form">
-  <input type="text" value = "">
-  <div class ="icons">
-    <input type="checkbox">
-     <button class="editbtn"> 
-<i class="far fa-edit"></i>
- </button>
- <button class="deletebtn" >
-   <i class="far fa-times-circle"></i>
-  </button>
-</div>
-</form>
-</li>
-</ul>
+   </form>
+   <div id="post">
+    <p>Hello world post 1</p>
+    <span class="option">
+      <i class="far fa-edit"></i>
+      <i class="far fa-times-circle"></i>
+      <i onClick="checkTask(this)" class="fa fa-circle-thin"></i>
+    </span> 
+   </div>
+
+
  </div>
  <button id="clear">Clear item</button>
 </div>
-
-
 <script src="script.js"></script>
 </body>
 </html>
